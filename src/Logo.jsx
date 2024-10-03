@@ -2,14 +2,14 @@ import React from 'react'
 import {useRef} from "react"
 import {useState} from "react"
 const Logo = () => {
-    const inputRef = useRef("")
+    const inputRef = useRef(null)
     const [imageData , setImageData] = useState(false)
     const [companyName , setCompanyName ] = useState("")
-    const API_KEY = "pk_c1iJbnaSQlqu8Z_zEpwSew"
+    const API_KEY = import.meta.env.VITE_API_KEY
 
         function getImage(){
-            const company = (inputRef.current.value).toString().trim()
-            console.log(company)
+          const company = inputRef.current.value.replace(/\s+/g, '');
+          
         const companyName = `https://img.logo.dev/${company}.com?token=${API_KEY}`
         setCompanyName(companyName)
         inputRef.current.value =``
