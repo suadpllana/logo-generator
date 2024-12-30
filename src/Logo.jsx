@@ -43,7 +43,7 @@ const Logo = () => {
  </a>
 
 
-<div className="tooltip">{isDownloaded ? "Downloaded" : "Download"}</div>
+<div className="tooltip">{isDownloaded ? "Viewed" : "View"}</div>
 </div>
        )}
          
